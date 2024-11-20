@@ -82,7 +82,7 @@ router.post('/login', async (req, resp, next) => {
         let user = await User.findOne({email: email});
 
         if(!user) {
-            resp.status(400).json({
+            return resp.status(400).json({
                 success: false,
                 msg: 'User not exist. Register to continue'
             })
